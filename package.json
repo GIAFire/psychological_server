@@ -1,0 +1,20 @@
+{
+  "name": "psychological_server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "wjb <723159401@qq.com>",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cookie-parser": "^1.4.6",
+    "cookie-session": "^2.1.0",
+    "crypto-js": "^4.2.0",
+    "express": "^4.18.3",
+    "mysql": "^2.18.1"
+  }
+}
