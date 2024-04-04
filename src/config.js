@@ -11,14 +11,18 @@ const registerRouter = require("./web_server/register")
 const loginRouter = require('./web_server/login')
 const adminLoginRouter = require('./admin_server/login')
 const adminUser = require('./admin_server/user')
+const uploud = require('./admin_server/uploud')
+const adminVideo = require('./admin_server/video')
 
 var config = app => {
-    // 1.数据解析
+    app.use('/uploads', express.static('uploads'));// 设置uploads文件夹为静态文件服务
     app.use(bodyParser.json()); // json格式数据解析
     app.use(registerRouter);
     app.use(loginRouter);
     app.use(adminLoginRouter);
     app.use(adminUser);
+    app.use(uploud);
+    app.use(adminVideo);
 
 }
 
