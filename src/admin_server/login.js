@@ -16,6 +16,7 @@ router.post("/adminLogin",(req,res)=>{
         let results = await handleDB(res,"admin","find","查询失败!"," phone = '"+phone+"' and password = '"+enPwd+"'")
         // 将查询结果的第0个元素转换为JSON对象
         const user = JSON.parse(JSON.stringify(results[0]));
+        console.log(user);
         user.password = '';
         // 使用JWT生成token
         const token = JWT.getToken(user,secret,expiresIn);

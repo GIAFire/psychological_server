@@ -5,8 +5,6 @@ const handleDB = require("../db/handleDB") // 导入数据库文件
 const CryptoJs = require ('crypto-js');  //导入加密库
 const UUID = require ('../utils/UUID');  //导入UUID
 const JWT = require ('../utils/JWT');  //导入JWT工具类
-const secret = 'dfgkeyuisfudhf';
-const expiresIn = '1d';
 
 
 router.post("/login",(req,res)=>{
@@ -22,7 +20,7 @@ router.post("/login",(req,res)=>{
         const user = JSON.parse(JSON.stringify(results[0]));
         user.password = '';
         // 使用JWT生成token
-        const token = JWT.getToken(user,secret,expiresIn);
+        const token = JWT.getToken(user);
         user.token = token;
         let obj = {};
         // 根据查询结果的长度判断登录状态，并构造相应的返回对象

@@ -11,7 +11,7 @@ router.post("/register",(req,res)=>{
         const { phone, password,username,school,stuNum } = req.body; 
         let enPwd = CryptoJs.MD5(password).toString();
         const id = UUID.generateUUID();
-        let results = await handleDB(res,"user","insert","插入失败!",{id:id,phone:phone,password:enPwd,username:username,school:school,stuNum:stuNum,status:0})
+        let results = await handleDB(res,"user","insert","插入失败!",{id:id,phone:phone,password:enPwd,username:username,school:school,stuNum:stuNum,status:1})
         let obj = {}
         if(results.affectedRows == 1){
             obj = {"code" : "0000","msg":"注册成功!"}
