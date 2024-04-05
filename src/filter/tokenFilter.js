@@ -11,7 +11,7 @@ function verifyToken(req, res, next) {
     }
 
     const reqPath = req.path;
-    if (reqPath === '/login' || reqPath === '/register' || reqPath === '/adminLogin') {
+    if (reqPath === '/login' || reqPath === '/register' || reqPath === '/adminLogin' || reqPath === '/uploudImg' || reqPath === '/uploudVideo') {
         next(); // 继续下一个中间件或请求处理器
     } else {
         jwt.verify(tokenWithoutBearer, SECRET_KEY, (err, decoded) => {
